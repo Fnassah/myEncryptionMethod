@@ -41,7 +41,7 @@
             android:id="@+id/logo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="135dp"
+            android:layout_gravity="end"
             android:src="@drawable/wlf_logo_foreground" />
 
     </androidx.appcompat.widget.Toolbar>
