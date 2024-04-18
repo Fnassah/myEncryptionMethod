@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,15 +37,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     //static final int variable created represents value 0 or 1
 
     private Context mContext;
-    private List <Chat> mChat;
+    private List<Chat> mChat;
     //class extends recyclerView class variables and attributes
     //defining private variables and they types
 
     FirebaseUser fUser;
 
 
-
-    public MessageAdapter (Context mContext,List<Chat>mChat){
+    public MessageAdapter(Context mContext, List<Chat> mChat) {
 
         this.mChat = mChat;
         this.mContext = mContext;
@@ -53,14 +53,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     //variables from this class specifically assigned as new variables within this class
 
 
-
     @NonNull
     @Override
     public MessageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == MSG_TYPE_RIGHT) {
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_right, parent, false);
             return new MessageAdapter.ViewHolder(view);
-        }else {
+        } else {
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_left, parent, false);
             return new MessageAdapter.ViewHolder(view);
         }
@@ -72,11 +71,19 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.ViewHolder holder, int position) {
 
-        //String dMSG = holder.show_message.setText(AESDecryptionMethod());
 
         Chat chat = mChat.get(position);
-        holder.show_message.setText(chat.getMessage());
-        //holder.show_message.setText(chat.getEncrypted());
+        String encrypted = chat.getEncrypted();
+        if (encrypted.length() < 0) {
+            throw new RuntimeException("no messages");
+        } else {
+        }
+        try {
+            String message = chat.getDecrypted();
+            holder.show_message.setText(message);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
@@ -91,9 +98,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     }
     //item count method returns mChat variable size meaning the int value of the total amount of items that defines mUsers
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView show_message;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -112,7 +120,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         if (mChat.get(position).getSender().equals(fUser.getUid())) {
             return MSG_TYPE_RIGHT;
-        }else {
+        } else {
             return MSG_TYPE_LEFT;
         }
     }
