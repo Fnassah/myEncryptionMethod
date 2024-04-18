@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lBlue"
+    tools:context=".logo_Screen">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/wlf_logo_foreground" />
+
+    <TextView
+        android:id="@+id/tLogo"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="265dp"
+        android:textColor="@color/lBlue"
+        android:text="Messenger"/>
+
+    <Button
+        android:id="@+id/loginBtn_logo"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/tLogo"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Login"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/SignupBtn_logo"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/loginBtn_logo"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="SignUp"
+        android:textSize="30dp" />
+
+</RelativeLayout>

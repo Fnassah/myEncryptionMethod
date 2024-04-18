@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "116011762542",
+    "project_id": "myencryptionmethod",
+    "storage_bucket": "myencryptionmethod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116011762542:android:68b04c52612eebd795777f",
+        "android_client_info": {
+          "package_name": "com.example.myencryptionmethod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRfh_mJFWGo5X_WrvZLGO3vgbisGuDP0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

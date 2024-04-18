@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lBlue"
+    tools:context=".signup_Screen">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/wlf_logo_foreground"
+        android:contentDescription="wlf logo"/>
+
+    <TextView
+        android:id="@+id/signupText"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="275dp"
+        android:textColor="@color/lBlue"
+        android:text="Sign-Up"/>
+
+    <EditText
+        android:id="@+id/signupEditUser"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/signupText"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Username"
+        android:inputType="text"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/signupEditEmail"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/signupEditUser"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/signupEditPass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/signupEditEmail"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/createAccount_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/signupEditPass"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Create Account"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/back_Btn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/lBlue"
+        android:contentDescription="backButton"
+        android:outlineAmbientShadowColor="@color/Blue"
+        android:src="@drawable/back_button"/>
+
+</RelativeLayout>
